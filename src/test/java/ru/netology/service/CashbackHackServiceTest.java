@@ -1,9 +1,8 @@
 package ru.netology.service;
 
-import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 
-import static org.testng.Assert.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CashbackHackServiceTest {
 
@@ -13,7 +12,7 @@ public class CashbackHackServiceTest {
         int expected = 100;
         CashbackHackService cashbackHackService = new CashbackHackService();
         int actual = cashbackHackService.remain(amount);
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -22,7 +21,7 @@ public class CashbackHackServiceTest {
         int expected = 150;
         CashbackHackService cashbackHackService = new CashbackHackService();
         int actual = cashbackHackService.remain(amount);
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -31,7 +30,7 @@ public class CashbackHackServiceTest {
         int expected = 1;
         CashbackHackService cashbackHackService = new CashbackHackService();
         int actual = cashbackHackService.remain(amount);
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -40,7 +39,7 @@ public class CashbackHackServiceTest {
         int expected = 1000;
         CashbackHackService cashbackHackService = new CashbackHackService();
         int actual = cashbackHackService.remain(amount);
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -49,6 +48,14 @@ public class CashbackHackServiceTest {
         int expected = 999;
         CashbackHackService cashbackHackService = new CashbackHackService();
         int actual = cashbackHackService.remain(amount);
-        assertEquals(actual, expected);
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void testRemain5() {
+        int amount = 1000;
+        int expected = 0;
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int actual = cashbackHackService.remain(amount);
+        Assert.assertEquals(expected, actual);
     }
 }
